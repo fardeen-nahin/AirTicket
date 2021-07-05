@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking</title>
+    <!-- Fonts -->
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main id="signUpPage">
+    <!--Header and Menu Section-->
+    <header class="container">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a class="active" href="#">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Booking Section-->
+    <section  class="main-content container">
+        <div class="booking-form">
+            <h3>Booking Flights</h3>
+            <div class="input-group">
+                <label for="">Flying From</label>
+                <input class="inp-style" type="text" name="" placeholder="Dhake, Bangladesh">
+            </div>
+            <div class="input-group">
+                <label for="">Flying To</label>
+                <input class="inp-style" type="text" name="" placeholder="New York, United States">
+            </div>
+            <div class="inputs">
+                <div class="input-group">
+                    <label" for="">Departure</label>
+                    <input class="inp-style" type="date" name="">
+                </div>
+                <div class="input-group">
+                    <label for="">Return</label>
+                    <input class="inp-style" type="date" name="">
+                </div>
+            </div>
+            <div class="input-group f-class">
+
+                <div class="col-8">
+                    <label for="">First Class ($150)</label>
+                    <input id="currentFirstClassValue" type="text" class="form-control text-center" value="3" />
+                </div>
+                <div class="col-2">
+                    <button onclick="personNumberHandle(false)" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                </div>
+                <div class="col-2">
+                    <button onclick="personNumberHandle(true)" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            
+            <div class="input-group f-class">
+                <div class="col-8">
+                    <label for="">Economy ($100)</label>
+                    <input  type="text" class="form-control text-center" value="1" />
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-default"><i class="fas fa-minus"></i></button>
+                </div>
+                <div class="col-2">
+                    <button  class="btn btn-default"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+
+
+
+            <div class="calculations">
+                <div class="amount">
+                    <div class="left">
+                        <p>Subtotal</p>
+                    </div>
+                    <div class="right">
+                        <p>$500</p>
+                    </div>
+                </div>
+
+                <div class="amount">
+                    <div class="left">
+                        <p>Charge 10% VAT</p>
+                    </div>
+                    <div class="right">
+                        <p>$50</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="amount">
+                    <div class="left">
+                        <h4>Total</h4>
+                    </div>
+                    <div class="right">
+                        <p>$550</p>
+                    </div>
+                </div>
+            </div>
+            <button id="bookButton" class="btn-style">Book Now</button>
+        </div>
+
+        <div class="booking-content">
+            <h1>discover <br> around the world</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise voluptatibus quam</p>
+        </div>
+    </section>
+    </main>
+
+    <section id="confirmPage" class="text-center">
+        <h1>Confirm Booking</h1>
+        
+    </section>
+
+
+    <!--Thank You-->
+
+    <script>
+    document.getElementById("bookButton").addEventListener("click", function(){
+            const signUpPage = document.getElementById("signUpPage");
+            signUpPage.style.display = 'none';
+            const confirmPage = document.getElementById("confirmPage");
+            confirmPage.style.display = 'block';
+        })
+
+        function personNumberHandle(isIncrease){
+            const currentFirstClassValue = document.getElementById("currentFirstClassValue");
+            const currentFirstClassNumber = parseInt(currentFirstClassValue.value);
+            
+        let personNewCount = 0;
+        if (isIncrease == true) {
+            personNewCount = currentFirstClassNumber + 1;
+        }
+        if (isIncrease == false && currentFirstClassNumber > 0) {
+            personNewCount = currentFirstClassNumber - 1;
+        }
+        currentFirstClassValue.value = personNewCount;
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
