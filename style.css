@@ -127,7 +127,6 @@ nav ul li a:hover, a.active{
 }
 .col-2 {
     position: relative;
-    top: 15px;
     left: 10px;
 }
 #confirmPage{
