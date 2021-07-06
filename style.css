@@ -131,4 +131,8 @@ nav ul li a:hover, a.active{
 }
 #confirmPage{
     display: none;
+    
+}
+.confirmation {
+    margin-top: 300px;
 }
